@@ -15,12 +15,17 @@ app.get("/", (req, res) => {
 });
 
 ////get notes
-app.get("/", (req, res) => {
-  res.send(`Please Enter A Request`);
+app.get("/api/notes", (req, res) => {
+  console.info(`${req.method} request received to get a note`);
+  //path.join probably goes here
+  res.json(notesData);
+  //   res.sendFile(path.join(__dirname, "index.html"));
 });
 
 ////posts new note
-app.post("/api/notes", (req, res) => {});
+app.post("/api/notes", (req, res) => {
+  console.info(`${req.method} request received to add a note`);
+});
 
 ////Delete Note
 app.delete("/api/notes:id", (req, res) => {
