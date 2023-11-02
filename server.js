@@ -3,29 +3,25 @@ const path = require("path");
 const notesData = require("./db/db.json");
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middleware to default
-app.use(express.static("public"));
+app.use(express.static("./public"));
+app.use(express.json()); //intercept jsonStringify and parse it
+app.use(express.urlencoded({ extended: true }));
 
 //routes
 //default redundant route
 app.get("/", (req, res) => {
+  // res.sendFile(__dirname, "index.html");
   res.send(`Please Enter A Request`);
 });
 
 ////get notes
-app.get("/api/notes", (req, res) => {
-  console.info(`${req.method} request received to get a note`);
-  //path.join probably goes here
-  res.json(notesData);
-  //   res.sendFile(path.join(__dirname, "index.html"));
-});
+
 
 ////posts new note
-app.post("/api/notes", (req, res) => {
-  console.info(`${req.method} request received to add a note`);
-});
+
 
 ////Delete Note
 app.delete("/api/notes:id", (req, res) => {

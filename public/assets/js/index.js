@@ -1,5 +1,3 @@
-// const server = require('../../../server');
-
 let noteForm;
 let noteTitle;
 let noteText;
