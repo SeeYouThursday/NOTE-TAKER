@@ -1,26 +1,15 @@
-const notes = require("express").Router();
+const notesRouter = require("express").Router();
 
 // Helper Functions taken from Act. 22
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils.js");
 
-// app.get("/", (req, res) => {
-//   console.info(`${req.method} received for notes`);
-//   ////Do something here
-// });
-
-app.get("/", (req, res) => {
+notesRouter.get("/", (req, res) => {
   console.info(`${req.method} request received to get a note`);
-  //path.join probably goes here
-  res.json(notesData);
-  res.sendFile(path.join(__dirname, "index.html"));
+  //  activity 22 feedback
+  readFromFile("../db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
-app.post("/", (req, res) => {
-  console.info(`${req.method} received for notes`);
-  ////Do something here
-});
-
-app.post("/api/notes", (req, res) => {
+notesRouter.post("/notes", (req, res) => {
   console.info(`${req.method} request received to add a note`);
   // const parseJSON = JSON.parse();
   console.log(req.body);
@@ -42,3 +31,5 @@ app.post("/api/notes", (req, res) => {
   // Log the response body to the console
   console.log(req.body);
 });
+
+module.exports = notesRouter;

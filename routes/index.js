@@ -1,12 +1,11 @@
 const express = require("express");
 
 //import module for notes
-const notes = require("./notes");
+const notesRouter = require("./notes.js");
 
-//create an instance of express()
 const app = express();
 
-app.use("/api/notes", notes);
+app.use("/notes", notesRouter);
 
 //export app
 module.exports = app;

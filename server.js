@@ -1,15 +1,18 @@
 const express = require("express");
 const path = require("path");
-const notesData = require("./db/db.json");
+// const notesData = require("./db/db.json");
+const api = require("./routes/index.js");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 // Middleware to default
 app.use(express.static("./public"));
-app.use(express.json()); //intercept jsonStringify and parse it
-app.use(express.urlencoded({ extended: true }));
 
+//intercept jsonStringify and parse it
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/api", api);
 //routes
 //default redundant route
 app.get("/", (req, res) => {
@@ -17,16 +20,15 @@ app.get("/", (req, res) => {
   res.send(`Please Enter A Request`);
 });
 
-////get notes
-
-
-////posts new note
-
-
-////Delete Note
-app.delete("/api/notes:id", (req, res) => {
-  const noteId = "";
+//Meant to just serve up the notes.html
+app.get("/notes", (req, res) => {
+  console.info(`${req.method} request received to get a note`);
+  res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
+////Delete Note
+// app.delete("/notes/notes:id", (req, res) => {
+//   const noteId = "";
+// });
 
 //// Run server and listen for requests
 app.listen(PORT, () => {
