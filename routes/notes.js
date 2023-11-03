@@ -1,15 +1,18 @@
 const notesRouter = require("express").Router();
 
-// Helper Functions taken from Act. 22
+// Helper Functions taken from Act. 22 in Week 11
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils.js");
+// random id gen
+const { v4: uuidv4 } = require("uuid");
+// uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 notesRouter.get("/", (req, res) => {
   console.info(`${req.method} request received to get a note`);
   //  activity 22 feedback
-  readFromFile("../db/db.json").then((data) => res.json(JSON.parse(data)));
+  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
-notesRouter.post("/notes", (req, res) => {
+notesRouter.post("/", (req, res) => {
   console.info(`${req.method} request received to add a note`);
   // const parseJSON = JSON.parse();
   console.log(req.body);
