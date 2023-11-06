@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+///added this index router below for future dev - only acts as a router for the notes API routes
 const api = require("./routes/index.js");
 
 //Instance of express
@@ -12,23 +13,19 @@ app.use(express.static("./public")); // Middleware to default
 app.use(express.json()); //intercept jsonStringify and parse it
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
-//routes
-//default redundant route
+
+//// HTML routes
+// Start get req
 app.get("/", (req, res) => {
-  // res.sendFile(__dirname, "index.html");
+  res.sendFile(__dirname, "index.html");
   res.send(`Please Enter A Request`);
 });
 
-//Meant to just serve up the notes.html
+//gets the notes.html
 app.get("/notes", (req, res) => {
   console.info(`${req.method} request received to get a note`);
   res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
-
-////Delete Note
-// app.delete("/notes/notes:id", (req, res) => {
-//   const noteId = "";
-// });
 
 //// Run server and listen for requests
 app.listen(PORT, () => {

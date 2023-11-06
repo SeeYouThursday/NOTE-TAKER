@@ -1,22 +1,7 @@
 [
-    {
-        "title": "bluey",
-        "text": "is cool",
-        "id": "ca2a2ea5-b535-4ced-bddf-e97c24b22bc1"
-    },
-    {
-        "title": "Brian",
-        "text": "is cool",
-        "id": "2bf44cf9-bcc6-47e9-931e-5ed154dac551"
-    },
-    {
-        "title": "bluey",
-        "text": "testing this",
-        "id": "b94700f2-ac98-4300-9de2-e8289c502c04"
-    },
-    {
-        "title": "Best",
-        "text": "Brian",
-        "id": "57573ebd-a43b-4d82-89c9-a34b72840bbf"
-    }
+  {
+    "title": "Brian",
+    "text": "is the best",
+    "id": "ab288653-5ffe-44fa-b889-133df801beef"
+  }
 ]

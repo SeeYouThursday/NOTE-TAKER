@@ -1,9 +1,0 @@
-class DataUpdate {
-  constructor(noteTitle, noteText, noteId) {
-    this.noteTitle = noteTitle;
-    this.noteText = noteText;
-    this.noteId = noteId;
-  }
-}
-
-module.exports = DataUpdate;
