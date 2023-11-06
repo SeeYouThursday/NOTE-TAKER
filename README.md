@@ -22,10 +22,15 @@ The Note Taker is a simple application that lets users create notes, view previo
 
 ## Usage
 
-To create a new note, click on the "New Note" button to enter a note title and its content. Next, select "Save Note" at the top right of the screen. To view an existing note, click on the note's title listed on the left side of the application. To delete a note, click the trashcan icon by the notes title on the left.undefined
-[Walkthrough Video](undefined)
+[Deployed Application](https://notetakinglifechanger-7576426cfcb3.herokuapp.com/)
+
+To create a new note, click on the "New Note" button to enter a note title and its content. Next, select "Save Note" at the top right of the screen. To view an existing note, click on the note's title listed on the left side of the application. To delete a note, click the trashcan icon by the notes title on the left.
+
+![#Note Taker Preview GIF](./assets/Note%20Taker.gif)
 
 ## Contributing
+
+[Note Taker Repo](https://github.com/SeeYouThursday/NOTE-TAKER/)
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
