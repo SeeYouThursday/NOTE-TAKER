@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 ////Middleware
-app.use(express.static("./public")); // Middleware to default
+app.use(express.static("public")); // Middleware to default
 app.use(express.json()); //intercept jsonStringify and parse it
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
